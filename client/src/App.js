@@ -1,9 +1,10 @@
+
 import "./App.css";
 import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect("https://manjeet-chat-app.herokuapp.com");
 
 function App() {
   const [username, setUsername] = useState("");
@@ -19,19 +20,20 @@ function App() {
 
   return (
     <div className="App">
+      <h1>🎀  𝒲𝑒𝓁𝒸☯𝓂𝑒 𝓉💙 𝑀𝒶𝓃𝒿𝑒𝑒𝓉'𝓈 𝒞𝒽𝒶𝓉  𝒜𝓅𝓅  🎀 </h1>
       {!showChat ? (
         <div className="joinChatContainer">
           <h3>Join A Chat</h3>
           <input
             type="text"
-            placeholder="John..."
+            placeholder="Please Type Your Name"
             onChange={(event) => {
               setUsername(event.target.value);
             }}
           />
           <input
             type="text"
-            placeholder="Room ID..."
+            placeholder="Enter The Room Id"
             onChange={(event) => {
               setRoom(event.target.value);
             }}
